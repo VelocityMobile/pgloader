@@ -23,9 +23,6 @@
     (:source (:type "bit") :target (:type "boolean")
              :using pgloader.transforms::sql-server-bit-to-boolean)
 
-    (:source (:type "uniqueidentifier") :target (:type "uuid")
-             :using pgloader.transforms::sql-server-uniqueidentifier-to-uuid)
-
     (:source (:type "hierarchyid") :target (:type "bytea")
              :using pgloader.transforms::byte-vector-to-bytea)
 
@@ -62,6 +59,7 @@
     (:source (:type "varbinary") :target (:type "bytea")
              :using pgloader.transforms::byte-vector-to-bytea)
 
+    (:source (:type "uniqueidentifier") :target (:type "text"))
     (:source (:type "smalldatetime") :target (:type "timestamptz"))
     (:source (:type "datetime") :target (:type "timestamptz"))
     (:source (:type "datetime2") :target (:type "timestamptz")))
